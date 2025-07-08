@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-tablet: 480px; /* For mobile devices 0 - 479px */
+  --breakpoint-laptop: 768px; /*For tablet devices 480px - 767px*/
+  --breakpoint-large: 1280px; /* For laptop/desktops 768px - 1279px*/
+  --text-color-primary: #1e293b;
+  --text-color-secondary: #475569;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+}

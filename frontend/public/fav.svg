@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 60 60">
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9a9e" />
+      <stop offset="100%" stop-color="#fecfef" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle r="24" fill="white" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- Briefcase icon -->
+  <rect x="-10" y="-6" width="20" height="12" rx="2" fill="url(#primaryGradient)" stroke="#2d3748" stroke-width="1.5" />
+  <path d="M -4 -6 Q -4 -10 0 -10 Q 4 -10 4 -6" fill="none" stroke="#2d3748" stroke-width="1.5" stroke-linecap="round" />
+  <rect x="-2" y="-1.5" width="4" height="6" rx="1" fill="#2d3748" />
+
+  <!-- Orbit ring -->
+  <circle r="16" fill="none" stroke="url(#accentGradient)" stroke-width="1.2" opacity="0.5" stroke-dasharray="2,2" />
+
+  <!-- Orbit dot -->
+  <circle cx="12" cy="-10" r="2" fill="#ff9a9e" />
+</svg>
