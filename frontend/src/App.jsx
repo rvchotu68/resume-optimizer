@@ -1,20 +1,15 @@
 import { useEffect } from "react";
 
 import AppRoutes from "./routes/AppRoutes";
-import { getUserStatus } from "./services/fireAuth";
+
 import NavBar from "./components/NavBar/NavBar";
 import { useLocation } from "react-router-dom";
+import { useAuth } from "./hooks/useAuth";
 
 function App() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    const unSub = getUserStatus();
-
-    return () => {
-      unSub();
-    };
-  }, []);
+  useAuth();
 
   return (
     <div className="relative min-h-screen">

@@ -6,6 +6,9 @@
   --breakpoint-large: 1280px; /* For laptop/desktops 768px - 1279px*/
   --text-color-primary: #1e293b;
   --text-color-secondary: #475569;
+
+  --bg-color-primary-800: #1e293b;
+  --bg-color-secondary: #475569;
 }
 
 * {

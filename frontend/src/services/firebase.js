@@ -4,14 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-console.log(import.meta.env.VITE_FIREBASE_API);
+
 const firebaseConfig = {
   apiKey: `${import.meta.env.VITE_FIREBASE_API}`,
-  authDomain: "resume-builder-ae72e.firebaseapp.com",
-  projectId: "resume-builder-ae72e",
-  storageBucket: "resume-builder-ae72e.firebasestorage.app",
-  messagingSenderId: "34521762809",
-  appId: "1:34521762809:web:f3005e7fcad2770feecb28",
+  authDomain: "jobverse-187ff.firebaseapp.com",
+  projectId: "jobverse-187ff",
+  storageBucket: "jobverse-187ff.firebasestorage.app",
+  messagingSenderId: "586086095804",
+  appId: "1:586086095804:web:44b7eb1162b2aca089e9b9",
 };
 
 // Initialize Firebase

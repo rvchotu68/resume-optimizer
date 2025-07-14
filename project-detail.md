@@ -51,14 +51,35 @@ Build a web app where users can upload resume and a job description(JD), and rec
 
 ### Phase - 1
 #### Decide/Implement:
-- [ ] Frontend Tech stack
-- [ ] API contract
+- [X] Frontend Tech stack
+- [X] API contract
 - [ ] Testing framework
-- [ ] Folder structure
-- [ ] UI (mobile/desktop)
-- [ ] Routes 
-- [ ] Authentication using FireStore
-- [ ] Resume file upload feature
-- [ ] JD upload/past feature
+- [X] Folder structure
+- [X] UI (mobile/desktop)
+- [X] Routes 
+- [X] Authentication using FireStore
+- [X] Resume file upload feature
+- [X] JD upload/past feature
 - [ ] Submit data to backend 
-- [ ] Show mocked response  
+- [ ] Show mocked response
+
+#### Remaining Tasks
+- Loader component
+- Show loader component when the user details are fetched in the background
+- Reauthenticate when the user cookie is expired
+- Input sanitization during login, sign up, file upload and JD upload.
+
+### Phase - 2
+#### Tasks
+- [ ] Create express server
+- [ ] create scalable, easy to maintain and efficient backend folder structure.
+- [ ] End points for user record creation and user record deletion
+- [ ] End points for resume and chat
+- [ ] Auth module to verify the JWT token sent from the client
+- [ ] Protect all the end points with the Auth module.
+- [ ] Create a user DB in mongoDB.
+- [ ] Extract the content of files by storing them in memory using multer.
+
+### Phase - 3
+#### Tasks
+- [ ] Learn LangChain  

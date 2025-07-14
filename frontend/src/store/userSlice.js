@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initData = {
-  uuid: "",
+  uid: "",
   email: "",
   displayName: "",
   photoURL: "",
@@ -13,9 +13,9 @@ const userSlice = createSlice({
   initialState: initData,
   reducers: {
     setUser: (_, { payload }) => {
-      const { uuid, email, displayName, photoURL } = payload;
+      const { uid, email, displayName, photoURL } = payload;
       return {
-        uuid,
+        uid,
         email,
         displayName,
         photoURL,
@@ -23,7 +23,7 @@ const userSlice = createSlice({
       };
     },
     signout: () => {
-      return { ...initData };
+      return { ...initData, isAuthDone: true };
     },
   },
 });
@@ -32,4 +32,6 @@ export const { setUser, signout } = userSlice.actions;
 
 export default userSlice.reducer;
 
-export const getUserData = (state) => state.user;
+export const getUserData = (state) => {
+  return state.user;
+};
