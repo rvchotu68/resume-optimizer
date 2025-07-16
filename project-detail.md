@@ -71,12 +71,12 @@ Build a web app where users can upload resume and a job description(JD), and rec
 
 ### Phase - 2
 #### Tasks
-- [ ] Create express server
+- [X] Create express server
 - [ ] create scalable, easy to maintain and efficient backend folder structure.
-- [ ] End points for user record creation and user record deletion
-- [ ] End points for resume and chat
+- [X] End points for user record creation and user record deletion
+- [X] End points for resume and chat
 - [ ] Auth module to verify the JWT token sent from the client
-- [ ] Protect all the end points with the Auth module.
+- [X] Protect all the end points with the Auth module.
 - [ ] Create a user DB in mongoDB.
 - [ ] Extract the content of files by storing them in memory using multer.
 

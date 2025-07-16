@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { sendResume } from "../../services/backend";
 import { useSelector } from "react-redux";
 import { getUserData } from "../../store/userSlice";
+import { useEffect } from "react";
+import auth from "../../services/fireAuth";
 
 function Resume() {
   const [isForm, setIsForm] = useState(false);
@@ -11,6 +13,15 @@ function Resume() {
   const file = useRef(null);
 
   const { uid } = useSelector(getUserData);
+
+  const getToken = async () => {
+    const token = await auth.currentUser.getIdToken();
+    console.log(token);
+  };
+
+  useEffect(() => {
+    getToken();
+  }, []);
 
   const submitBtnHandler = async () => {
     const form = new FormData();
@@ -43,6 +54,7 @@ function Resume() {
           type="file"
           name="resumeFile"
           className="hidden"
+          accept=".pdf,.doc,.docx"
           onChange={fileOnChangeHandler}
           ref={file}
         />
