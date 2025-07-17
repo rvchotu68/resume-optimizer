@@ -10,8 +10,7 @@ exports.auth = async (req, res, next) => {
 
   try {
     const decoded = await admin.auth().verifyIdToken(authToken);
-    console.log(decoded);
-    console.log("checked");
+    req.user = decoded;
     next();
   } catch (err) {
     console.log(err);
