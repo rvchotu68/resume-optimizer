@@ -3,8 +3,6 @@ const fs = require("fs");
 class FileService {
   constructor() {}
 
-  async extractContent(req) {}
-
   deleteFileFromStorage(req) {
     console.log(req.file.path);
 
@@ -14,6 +12,11 @@ class FileService {
     } catch (er) {
       throw er;
     }
+  }
+
+  async createFileFromText() {
+    try {
+    } catch (err) {}
   }
 }
 

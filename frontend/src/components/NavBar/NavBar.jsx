@@ -11,7 +11,7 @@ function NavBar() {
   const { uid } = useSelector(getUserData);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-lg flex items-center justify-between px-1">
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-lg flex items-center justify-between px-1 z-10">
       <div className="left flex items-center">
         <Logo width={80} height={80} />
         <p className="text-2xl text-[#1e293b]">

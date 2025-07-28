@@ -7,6 +7,6 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => cb(null, file.originalname),
 });
 
-console.log(process.cwd() + "/uploads/");
+console.log(`${path.join(__dirname)}${"../../uploads"}`);
 
 module.exports = storage;

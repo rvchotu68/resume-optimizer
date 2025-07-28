@@ -1,20 +1,28 @@
 /* eslint-disable no-useless-catch */
 import axios from "axios";
+import auth from "./fireAuth";
+import data from "./../data";
 
 // Users
 
 // Resume
 
-export const sendResume = async (id, formData) => {
+export const sendResume = async (formData) => {
+  const token = await auth.currentUser.getIdToken();
   let serverURL = import.meta.env.VITE_BACKEND_URL;
 
-  let endpoint = import.meta.env.VITE_RESUME_ENDPOINT;
-  endpoint = endpoint.replace(/$id/, id);
+  const endpoint = import.meta.env.VITE_RESUME_ENDPOINT;
 
   serverURL = serverURL + endpoint;
 
   try {
-    const data = await axios(serverURL, formData);
+    // const data = await axios.post(serverURL, formData, {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    //   withCredentials: true,
+    // });
     return data;
   } catch (err) {
     throw err;

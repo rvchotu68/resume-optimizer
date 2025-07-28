@@ -1,5 +1,5 @@
 const fileServices = require("../services/file.services");
-
+const AIService = require("./../services/AI.services");
 const userService = require("./../services/user.services");
 
 exports.addUserprofile = async (req, res) => {
@@ -43,15 +43,42 @@ exports.deleteUserProfile = async (req, res) => {
   }
 };
 
-exports.optimizeResume = (req, res) => {
+exports.optimizeResume = async (req, res) => {
   console.log("body", req.body);
   console.log("file", req.file);
 
-  //send the file to extract the text and store it
+  const { jobDesc } = req.body;
 
-  //delete the stored file
-  fileServices.deleteFileFromStorage(req);
-  res.send("File received");
+  const AIservice = new AIService();
+
+  if (!req.body || !req.file)
+    return res.status(400).json({ code: "ERROR", message: "Data missing" });
+
+  try {
+    //set the doc type
+    AIservice.setDoc(req.file);
+    await AIservice.extractTextFromFile(req.file);
+    // //delete the stored file
+    await AIservice.createPrompt(jobDesc);
+    // await AIservice.generateResume();
+    const response = await AIservice.generateResume();
+
+    //store the user resume in the mongo db for future use.
+
+    //delete the uploaded resume
+    fileServices.deleteFileFromStorage(req);
+
+    //send the response back to the frontend
+    res.status(200).json({
+      code: "SUCCESS",
+      data: response,
+    });
+  } catch (err) {
+    res.status(400).json({
+      code: "ERROR",
+      message: err.message,
+    });
+  }
 };
 
 exports.chat = (req, res) => {
